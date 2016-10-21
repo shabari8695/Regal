@@ -1,6 +1,7 @@
 package com.example.ezio.regal;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +12,15 @@ import android.widget.TextView;
 public class sign_up extends AppCompatActivity {
     TextView display_sign_up_error;
     EditText first_name,last_name,email,password,confirm_password;
-    Button submit,back;
+    Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
+
         display_sign_up_error=(TextView)findViewById(R.id.display_sign_up_errors);
         first_name=(EditText)findViewById(R.id.sign_up_first_name);
         last_name=(EditText)findViewById(R.id.sign_up_last_name);
@@ -23,16 +28,6 @@ public class sign_up extends AppCompatActivity {
         password=(EditText)findViewById(R.id.sign_up_password);
         confirm_password=(EditText)findViewById(R.id.sign_up_confirm_password);
         submit=(Button)findViewById(R.id.sign_up_submit);
-        back=(Button)findViewById(R.id.sign_up_back);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent("android.intent.action.login_screen");
-                startActivity(intent);
-                finish();
-            }
-        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

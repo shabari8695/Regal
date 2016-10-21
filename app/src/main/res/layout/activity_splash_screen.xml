@@ -7,10 +7,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#009688"
     tools:context="com.example.ezio.regal.splash_screen">
     <TextView
         android:text="Regal"
-        android:textColor="#009688"
+        android:textColor="#FFFFFF"
         android:textSize="50dp"
         android:layout_gravity="center_vertical"
         android:textAlignment="center"

@@ -11,34 +11,60 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class patient_screen extends AppCompatActivity {
-    TextView t;
-    String previous_selected_item="";
-    String active_prescriptions[]={"tablet1","tablet2","tablet3","tablet4","tablet6","tablet7"};
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_screen);
-        t=(TextView)findViewById(R.id.tablet_details);
-        ListView l=(ListView)findViewById(R.id.active_prescription);
-        ArrayList<String>list=new ArrayList<String>();
-        for(int i=0;i<active_prescriptions.length;i++){
-            list.add(active_prescriptions[i]);
-        }
-        ArrayAdapter<String>arrayAdapter=new ArrayAdapter<String>(this,R.layout.list_item,list);
-        l.setAdapter(arrayAdapter);
+        // get the listview
+        expListView = (ExpandableListView) findViewById(R.id.lvep);
 
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                t.setText("");
-               String val=adapterView.getItemAtPosition(i).toString();
-                String tablet_details="Name: "+val+"\nDosage: whatever"+""+"\n";
-                t.setText(tablet_details);
-            }
-        });
+        // preparing list data
+        prepareListData();
 
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+
+        // setting list adapter
+        expListView.setAdapter(listAdapter);
+    }
+
+    /*
+     * Preparing the list data
+     */
+    private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
+
+        // Adding child data
+        listDataHeader.add("Tablet 1");
+        listDataHeader.add("Tablet 2");
+        listDataHeader.add("Tablet 3");
+
+        // Adding child data
+        List<String> tablet1 = new ArrayList<String>();
+       tablet1.add("\nName\ninterval\ncolor");
+
+        List<String> nowShowing = new ArrayList<String>();
+        nowShowing.add("\n" +
+                "Name\n" +
+                "interval\n" +
+                "color");
+
+        List<String> comingSoon = new ArrayList<String>();
+        comingSoon.add("\n" +
+                "Name\n" +
+                "interval\n" +
+                "color");
+
+        listDataChild.put(listDataHeader.get(0), tablet1); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), nowShowing);
+        listDataChild.put(listDataHeader.get(2), comingSoon);
     }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Regal</string>
+    <string name="http_key">cfd-embassy","$2b$12$BYDebu0UIJwb05N8BfwPEOZDJDxJGHrAx7JzqIC6NLP0GUrn1hBmO</string>
     <string name="title_activity_doctor_second_screen">doctor_second_screen</string>
 </resources>

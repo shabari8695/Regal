@@ -17,6 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit Prescription"/>
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/edit_prescription_display_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#D50000"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp" />
     <EditText
         android:hint="Tablet Name"
         android:id="@+id/edit_prescription_tablet_name"
@@ -39,7 +50,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"/>
     <EditText
-        android:hint="Start Date(dd/mm/yyy)"
+        android:hint="Start Date(yyyymmdd)"
         android:id="@+id/edit_prescription_start_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +60,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"/>
     <EditText
-        android:hint="End Date(dd/mm/yyy)"
+        android:hint="End Date(yyyymmdd)"
         android:id="@+id/edit_prescription_end_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,8 +71,8 @@
         android:layout_marginStart="15dp"/>
 
     <EditText
-        android:hint="Frequency"
-        android:id="@+id/edit_prescription_frequency"
+        android:hint="Interval"
+        android:id="@+id/edit_prescription_interval"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

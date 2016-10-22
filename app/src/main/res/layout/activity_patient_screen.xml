@@ -9,21 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.ezio.regal.patient_screen">
-    <TextView
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        android:textColor="#009688"
+    <ExpandableListView
+        android:id="@+id/lvep"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="List Tablets"/>
-    <TextView
-        android:id="@+id/tablet_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ListView
-        android:id="@+id/active_prescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="match_parent"></ExpandableListView>
 </LinearLayout>

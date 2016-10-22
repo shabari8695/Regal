@@ -43,15 +43,20 @@ public class login_screen extends AppCompatActivity {
                 if(user_email.equals("") || user_password.equals(""))
                     display_error.setText("Enter E-Mail address and Password");
                 //temporary test
-                else if(!user_email.equals("regal")&&!user_password.equals("regal"))
-                    display_error.setText("Invalid E-Mail address or Password");
-                else {
-                    //write code to set sharedPreference file "regal"
-
-
-                    Intent intent=new Intent("android.intent.action.main_screen");
+                else if(user_email.equals("regal")&& user_password.equals("regal")){
+                    Intent intent=new Intent("android.intent.action.patient_screen");
                     startActivity(intent);
                     finish();
+                }
+
+                else if(user_email.equals("embassy")&& user_password.equals("embassy")){
+                    Intent intent=new Intent("android.intent.action.doctor_main_screen");
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    display_error.setText("invalid email or password");
+
                 }
             }
         });

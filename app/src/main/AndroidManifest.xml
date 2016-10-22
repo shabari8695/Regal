@@ -22,16 +22,40 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_screen">
+        <activity android:name=".sign_up">
             <intent-filter>
-                <action android:name="android.intent.action.main_screen" />
+                <action android:name="android.intent.action.sign_up" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".sign_up">
+        <activity android:name=".patient_screen">
             <intent-filter>
-                <action android:name="android.intent.action.sign_up" />
+                <action android:name="android.intent.action.patient_screen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".doctor_main_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.doctor_main_screen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".doctor_second_screen"
+            android:label="@string/title_activity_doctor_second_screen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.doctor_second_screen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".edit_prescription">
+            <intent-filter>
+                <action android:name="android.intent.action.edit_prescription" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Regal</string>
+    <string name="title_activity_doctor_second_screen">doctor_second_screen</string>
 </resources>

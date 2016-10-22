@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class sign_up extends AppCompatActivity {
     TextView display_sign_up_error;
     EditText first_name,last_name,email,password,confirm_password;
-    Button submit;
+    Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +27,9 @@ public class sign_up extends AppCompatActivity {
         email=(EditText)findViewById(R.id.sign_up_email);
         password=(EditText)findViewById(R.id.sign_up_password);
         confirm_password=(EditText)findViewById(R.id.sign_up_confirm_password);
-        submit=(Button)findViewById(R.id.sign_up_submit);
+        next=(Button)findViewById(R.id.sign_up_submit);
 
-        submit.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(first_name.getText().toString().equals("")||last_name.getText().toString().equals("")||email.getText().toString().equals("")||password.getText().toString().equals("")||confirm_password.getText().toString().equals(""))

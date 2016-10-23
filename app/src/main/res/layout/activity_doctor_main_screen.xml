@@ -21,7 +21,37 @@
         android:longClickable="true"
         android:id="@+id/patient_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     </ListView>
+    <EditText
+        android:id="@+id/patient_email"
+        android:hint="Patient Email"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/doctor_add_paitent"
+            android:text="Add"
+            android:textColor="#FFFFFF"
+            android:background="#009688"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:visibility="invisible"
+            android:id="@+id/doctor_update_list"
+            android:layout_marginLeft="5dp"
+            android:text="update"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:background="#009688"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>

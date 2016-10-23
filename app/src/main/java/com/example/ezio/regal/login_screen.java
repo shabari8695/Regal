@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,7 +26,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class login_screen extends AppCompatActivity {
-
+    //JSONObject pass_to_intend;
     EditText email;
     EditText passowrd;
     Button login;
@@ -79,11 +80,13 @@ public class login_screen extends AppCompatActivity {
             Log.v(""," request completed");
             if(param==1) {
                 Intent intent = new Intent("android.intent.action.doctor_main_screen");
+                intent.putExtra("doc_email",email.getText().toString());
                 startActivity(intent);
                 finish();
             }
             else if(param==0){
                 Intent intent=new Intent("android.intent.action.patient_screen");
+                intent.putExtra("patient_email",email.getText().toString());
                 startActivity(intent);
                 finish();
             }
@@ -142,6 +145,7 @@ public class login_screen extends AppCompatActivity {
                 JSONObject jobj=new JSONObject(buffer.toString());
                 String success=jobj.getString("success");
                 String doctor=jobj.getString("doctor");
+                //pass_to_intend=jobj;
 
                 if(success.equals("true")){
                     if(doctor.equals("true"))

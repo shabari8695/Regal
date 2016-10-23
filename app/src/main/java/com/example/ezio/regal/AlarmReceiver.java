@@ -28,10 +28,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
 
-        Notification notification = builder.setContentTitle("Demo App Notification")
-                .setContentText("New Notification From Demo App..")
-                .setTicker("New Message Alert!")
-                .setSmallIcon(R.mipmap.ic_launcher)
+        Notification notification = builder.setContentTitle("Time To Take Your Medicine")
+                .setContentText("Do not forget to submit image")
+                .setTicker("Time To Take Medicine!")
+                .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentIntent(pendingIntent).build();
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:context="com.example.ezio.regal.sign_up">
     <TextView
-        android:text="Regal"
+        android:text="Hamelin"
         android:textColor="#009688"
         android:textSize="50dp"
         android:textAlignment="center"

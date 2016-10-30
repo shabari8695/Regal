@@ -9,21 +9,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ezio.regal.NotificationActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/captured_photo"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:contentDescription="desc"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="capture"
-        android:id="@+id/photo_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
 </RelativeLayout>

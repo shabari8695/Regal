@@ -33,7 +33,9 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setTicker("Time To Take Medicine!")
                 .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentIntent(pendingIntent).build();
-
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        notification.defaults|=Notification.DEFAULT_SOUND;
+        notification.defaults|=Notification.DEFAULT_ALL;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0, notification);
     }

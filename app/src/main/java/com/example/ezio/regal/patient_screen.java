@@ -61,7 +61,10 @@ public class patient_screen extends AppCompatActivity {
                     JSONObject jobj = parm.getJSONObject(i);
                     listDataHeader.add(jobj.getString("name"));
                     List<String>temp=new ArrayList<String>();
-                    temp.add("Name: "+jobj.get("name").toString()+"\nDosage: "+jobj.getInt("dosage")+"\nzColor:"+jobj.getString("color"));
+                    temp.add("Name: "+jobj.get("name").toString()+"\nDosage: "+jobj.getInt("dosage")
+                            +"\nBreakfast: "+jobj.get("breakfast")+"\nLunch: "+jobj.get("lunch")+"\ndinner: "
+                            +jobj.get("dinner")
+                            +"\nColor:"+jobj.getString("color"));
                     listDataChild.put(listDataHeader.get(i),temp);
                 }
             }catch (JSONException e){
@@ -69,19 +72,20 @@ public class patient_screen extends AppCompatActivity {
             }
             listAdapter = new ExpandableListAdapter(patient_screen.this, listDataHeader, listDataChild);
 
-            // setting list adapter
+            // setting lis
             expListView.setAdapter(listAdapter);
 
-            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-            Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
-            notificationIntent.addCategory("android.intent.category.DEFAULT");
+                Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+                notificationIntent.addCategory("android.intent.category.DEFAULT");
 
-            PendingIntent broadcast = PendingIntent.getBroadcast(patient_screen.this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent broadcast = PendingIntent.getBroadcast(patient_screen.this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-            Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.SECOND, 10);
-            alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.SECOND, 10);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+
         }
         @Override
         protected JSONArray doInBackground(String... strings) {

@@ -25,22 +25,14 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        imageHolder=(ImageView)findViewById(R.id.captured_photo);
-        Button capturedImageButton = (Button)findViewById(R.id.photo_button);
-        capturedImageButton.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoCaptureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(photoCaptureIntent, requestCode);
-            }
-        });
+        Intent photoCaptureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(photoCaptureIntent, requestCode);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(this.requestCode == requestCode && resultCode == RESULT_OK){
             Bitmap bitmap = (Bitmap)data.getExtras().get("data");
-            imageHolder.setImageBitmap(bitmap);
             Random generator=new Random();
             int n=1000;
             n=generator.nextInt(n);
@@ -72,4 +64,5 @@ public class NotificationActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(emailInted,"sending email..."));
         }
     }
+
 }
